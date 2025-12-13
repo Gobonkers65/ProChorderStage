@@ -29,9 +29,16 @@
       color: var(--text-main);
       font-family: var(--font-stack);
       margin: 0; padding: 0;
+      
+      /* FIX: Använd dvh (Dynamic Viewport Height) för bättre mobil-stöd */
       height: 100vh;
+      height: 100dvh; 
+      
       display: flex; flex-direction: column;
+      
+      /* FIX: Förhindra att hela "kroppen" scrollar bort toolbaren */
       overflow: hidden;
+      overscroll-behavior: none; 
     }
 
     /* --- TOOLBAR --- */
@@ -42,6 +49,9 @@
       display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--border);
       flex-shrink: 0; z-index: 20;
+      
+      /* FIX: Säkerställ att den stannar i toppen */
+      position: relative; 
     }
     .title-area { font-weight: bold; font-size: 0.9rem; letter-spacing: 0.5px; }
     .controls { display: flex; gap: 4px; }
@@ -112,6 +122,8 @@
       overflow-y: auto;
       display: flex; flex-wrap: wrap; gap: 8px;
       align-content: flex-start; height: 100%;
+      /* FIX: Bättre scroll-upplevelse på mobil */
+      -webkit-overflow-scrolling: touch;
     }
 
     .ref-card {
@@ -209,7 +221,6 @@
     }
     #editor-view.visible { display: flex; }
     
-    /* NY CSS: Header för editor-vyn */
     .editor-header {
       display: flex; justify-content: space-between; align-items: center;
       padding: 0 10px; background: var(--surface-color);
