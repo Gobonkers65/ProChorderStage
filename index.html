@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>ProChorder Stage - Final</title>
+  <title>ProChorder Git</title>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
@@ -291,7 +291,7 @@
 
   <div id="side-menu">
     <div style="padding:15px 10px; border-bottom:1px solid #333; display:flex; justify-content:space-between; align-items:center; background:#222;">
-      <span style="font-weight:bold; font-size:1.1rem;">Mina Låtar</span>
+      <span style="font-weight:bold; font-size:1.1rem;">My songs</span>
       <button onclick="toggleMenu()" style="background:none; border:none; color:#fff; font-size:1.2rem;">✕</button>
     </div>
     
@@ -302,17 +302,17 @@
     <ul id="song-list"></ul>
     
     <div class="menu-footer">
-      <button onclick="createNewSong()" class="primary menu-btn">+ Ny Låt</button>
+      <button onclick="createNewSong()" class="primary menu-btn">+ New song</button>
       
       <div style="height:1px; background:#444; margin:5px 0;"></div>
       
-      <button onclick="exportJSON()" class="menu-btn">Spara Backup (Alla låtar)</button>
+      <button onclick="exportJSON()" class="menu-btn">Save Backup (All songs)</button>
       <input type="file" id="file-import" accept=".json" onchange="importJSON(this)" style="display:none">
-      <button onclick="document.getElementById('file-import').click()" class="menu-btn">Importera Backup</button>
+      <button onclick="document.getElementById('file-import').click()" class="menu-btn">Import Backup</button>
       
       <div style="height:1px; background:#444; margin:5px 0;"></div>
       
-      <button onclick="exportAllPDFs()" class="menu-btn" style="background:#2c4446; border-color:#385557;">Ladda ner ZIP (PDF:er)</button>
+      <button onclick="exportAllPDFs()" class="menu-btn" style="background:#2c4446; border-color:#385557;">Download ZIP-PDF</button>
     </div>
   </div>
   <div id="menu-overlay" onclick="toggleMenu()"></div>
@@ -325,7 +325,7 @@
     <div class="controls">
       <button id="btn-trans-down">b</button>
       <button id="btn-trans-up">#</button>
-      <button onclick="toggleEditor(true)">⚙️ Råtext</button>
+      <button onclick="toggleEditor(true)">⚙️ Raw txt</button>
     </div>
   </div>
 
@@ -333,7 +333,7 @@
     
     <div class="reference-panel">
       <div class="panel-header-row">
-        <span class="panel-title">Bibliotek (Dra för att sortera)</span>
+        <span class="panel-title">Add to timeline, Arrange</span>
         
         <div class="add-section-container">
           <button class="btn-add-new" title="Lägg till ny sektion" onclick="toggleAddMenu(true)">+</button>
@@ -355,7 +355,7 @@
     </div>
 
     <div class="structure-panel">
-      <div class="structure-header">Tidslinje</div>
+      <div class="structure-header">Timeline</div>
       <div id="timeline-list">
         </div>
     </div>
@@ -364,8 +364,8 @@
 
   <div id="editor-view">
     <div class="editor-header">
-       <span style="font-weight:bold; font-size:0.9rem; color:#888;">REDIGERA RÅTEXT</span>
-       <button onclick="toggleEditor(false)" class="primary">Spara & Visa</button>
+       <span style="font-weight:bold; font-size:0.9rem; color:#888;">EDIT RAW TXT</span>
+       <button onclick="toggleEditor(false)" class="primary">Save & Show</button>
     </div>
     <textarea id="raw-input" spellcheck="false" placeholder="Titel&#10;# Intro&#10;Am   G&#10;# Vers 1&#10;Am   C..."></textarea>
   </div>
@@ -981,7 +981,7 @@ Bm   A   G   F#7`;
       }
       
       const content = await zip.generateAsync({type:"blob"});
-      saveAs(content, "Mina_Latar_PDF.zip");
+      saveAs(content, "ProGit_PDF.zip");
     }
 
     init();
